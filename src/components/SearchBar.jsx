@@ -1,25 +1,30 @@
 import { Button, MenuItem, Select } from "@mui/material";
-import axios from "axios";
-import { API_URL } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
-import { setName, setData, setType } from "../utils/searchSlice";
+import {
+  setName,
+  setData,
+  setType,
+  setTotalResults,
+  setPage,
+} from "../utils/searchSlice";
+import { fetchData } from "../utils/api";
 
 const SearchBar = () => {
-  const { name, type, page } = useSelector((state) => state.search);
+  const { name, type } = useSelector((state) => state.search);
   const dispatch = useDispatch();
 
-  const handleClick = async () => {
+  const handleClick = async (page = 1) => {
     try {
-      let type2 = type;
+      let updatedType;
       if (type === "Both") {
-        type2 = "";
+        updatedType = "";
       } else {
-        type2 = type;
+        updatedType = type;
       }
-      const response = await axios.get(
-        API_URL + `&s=${name}&type=${type2}&page=${page}`
-      );
+      const response = await fetchData(name, updatedType, page);
       dispatch(setData({ data: response?.data?.Search }));
+      dispatch(setTotalResults({ totalResults: response?.data?.totalResults }));
+      dispatch(setPage({ page: 1 }));
     } catch (error) {
       console.log(error);
     }
@@ -43,7 +48,11 @@ const SearchBar = () => {
           onChange={(e) => {
             dispatch(setType({ type: e.target.value }));
           }}
-          sx={{ backgroundColor: "white", borderRadius: "15px", marginRight: "15px" }}
+          sx={{
+            backgroundColor: "white",
+            borderRadius: "15px",
+            marginRight: "15px",
+          }}
         >
           <MenuItem value={"Both"}>Both</MenuItem>
           <MenuItem value={"movie"}>Movie</MenuItem>

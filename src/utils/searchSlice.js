@@ -5,6 +5,7 @@ const initialState = {
   type: "Both",
   page: 1,
   data: [],
+  totalResults: 0,
 };
 
 const searchSlice = createSlice({
@@ -22,10 +23,14 @@ const searchSlice = createSlice({
     },
     setData: (state, action) => {
       state.data = action.payload.data;
-    }
+    },
+    setTotalResults: (state, action) => {
+      state.totalResults = action.payload.totalResults;
+    },
   },
 });
 
-export const { setName, setType, setPage, setData } = searchSlice.actions;
+export const { setName, setType, setPage, setData, setTotalResults } =
+  searchSlice.actions;
 
 export default searchSlice.reducer;
