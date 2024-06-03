@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Favorites from "./pages/Favorites";
+import Details from "./pages/Details";
 import Grid from "@mui/material/Grid";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/favorites" element={<Favorites />} />
+            <Route path="/details/:id" element={<Details />} />
           </Routes>
         </Grid>
       </BrowserRouter>
