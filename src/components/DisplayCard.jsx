@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
 
-const DisplayCard = (props) => {
+const DisplayCard = ({ props }) => {
   const { Title, Year, imdbID, Type, Poster } = props;
 
   const navigate = useNavigate();

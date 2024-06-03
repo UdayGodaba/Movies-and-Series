@@ -1,9 +1,12 @@
+/* eslint-disable react/prop-types */
 import DisplayCard from "./DisplayCard";
 
-const DisplayCards = () => {
+const DisplayCards = ({ cards }) => {
   return (
-    <div>
-      <DisplayCard />
+    <div className="cards">
+      {cards.map((card, idx) => (
+        <DisplayCard key={idx} props={card} />
+      ))}
     </div>
   );
 };

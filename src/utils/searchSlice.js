@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   name: "",
-  type: "",
+  type: "Both",
   page: 1,
   data: [],
 };
@@ -22,7 +22,7 @@ const searchSlice = createSlice({
     },
     setData: (state, action) => {
       state.data = action.payload.data;
-    },
+    }
   },
 });
 
