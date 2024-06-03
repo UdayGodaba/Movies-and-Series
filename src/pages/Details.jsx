@@ -18,7 +18,6 @@ const Details = () => {
       try {
         const response = await axios.get(API_URL + `&i=${id}`);
         setData(response?.data);
-        console.log(response.data);
       } catch (error) {
         console.log(error);
       }

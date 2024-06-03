@@ -52,6 +52,7 @@ const SearchBar = () => {
             backgroundColor: "white",
             borderRadius: "15px",
             marginRight: "15px",
+            height: "45px",
           }}
         >
           <MenuItem value={"Both"}>Both</MenuItem>
@@ -63,7 +64,7 @@ const SearchBar = () => {
           color="warning"
           style={{
             borderRadius: "15px",
-            height: "55px",
+            height: "45px",
           }}
           onClick={() => handleClick()}
         >
