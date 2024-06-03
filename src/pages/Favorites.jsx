@@ -1,5 +1,15 @@
 const Favorites = () => {
-  return <div>Favorites</div>;
+  return (
+    <div
+      style={{
+        backgroundColor: "#1c4b91",
+        height: "92vh",
+        paddingTop: "8vh",
+      }}
+    >
+      Favorites
+    </div>
+  );
 };
 
 export default Favorites;
