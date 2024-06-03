@@ -30,7 +30,7 @@ const Details = () => {
     {
       favData &&
         favData.forEach((element) => {
-          if (element.imdbID == id) flag = false;
+          if (element?.imdbID == id) flag = false;
         });
     }
     if (flag) {

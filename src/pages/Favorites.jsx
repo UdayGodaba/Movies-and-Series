@@ -1,13 +1,15 @@
+import { useSelector } from "react-redux";
+import DisplayCards from "../components/DisplayCards";
+
 const Favorites = () => {
+  const { data } = useSelector((state) => state.favorite);
+  console.log(data);
   return (
-    <div
-      style={{
-        backgroundColor: "#1c4b91",
-        height: "92vh",
-        paddingTop: "8vh",
-      }}
-    >
-      Favorites
+    <div className="fav">
+      <div className="fav-sc1"></div>
+      <div className="fav-sc2">
+        <DisplayCards cards={data} />
+      </div>
     </div>
   );
 };
