@@ -94,6 +94,42 @@ body {
   color: white;
 }
 
+.details {
+  padding: 8% 8%;
+}
+
+.details-sc1 {
+  display: flex;
+}
+
+.details-banner {
+  width: 1000px;
+  margin: 10px;
+}
+
+.details-banner {
+  object-fit: contain;
+  width: 100%;
+  height: 500px;
+  border-radius: 15px;
+}
+
+.details-content {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: x-large;
+}
+
+.details-subtitle {
+  color: white;
+}
+
+.details-content > span {
+  color: gray;
+  padding: 5px;
+}
+
 @media (max-width: 800px) {
   .search {
     margin-top: 20%;
@@ -105,5 +141,14 @@ body {
   }
   .cards {
     justify-content: center;
+  }
+  .details {
+    padding: 15%;
+  }
+  .details-sc1 {
+    flex-direction: column;
+  }
+  .details-banner {
+    width: 300px;
   }
 }
