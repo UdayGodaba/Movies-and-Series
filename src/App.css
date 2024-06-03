@@ -130,6 +130,22 @@ body {
   padding: 5px;
 }
 
+.details-sc2 {
+  margin: 1%;
+}
+
+.details-sc2 > button {
+  margin: 5px;
+  padding: 5px;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.details-sc2 > button:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 800px) {
   .search {
     margin-top: 20%;
